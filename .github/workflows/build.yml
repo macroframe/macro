@@ -1,0 +1,34 @@
+name: Go
+
+on:
+  push:
+  pull_request:
+
+jobs:
+
+  build:
+    if: "!contains(github.event.head_commit.message, 'autoupdate')"
+    name: Build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v3
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '^1'
+
+      - run: go version
+
+      - name: Get dependencies
+        run: go get -v -t -d ./...
+
+      - name: Build
+        run: go build -v .
+
+      - name: Test
+        run: go test -v .
