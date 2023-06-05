@@ -1,7 +1,7 @@
 package macro
 
-type keyboard struct {
+type keyboardType struct {
 }
 
-// Keyboard includes all keyboard related functions.
-var Keyboard = keyboard{}
+// Keyboard includes all keyboardType related functions.
+var Keyboard = keyboardType{}
