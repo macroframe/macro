@@ -3,7 +3,7 @@
 ## Requirements
 
 <details>
-<summary><h4>macOS</h4></summary>
+<summary><b>macOS</b></summary>
 
 ```bash
 xcode-select --install
@@ -15,7 +15,7 @@ If you want to use screen capture functions, you might have to give your program
 </details>
 
 <details>
-<summary><h4>Debian / Ubuntu</h4></summary>
+<summary><b>Debian / Ubuntu</b></summary>
 
 ```bash
 sudo apt install gcc libc6-dev libx11-dev xorg-dev libxtst-dev xsel xclip libpng++-dev xcb libxcb-xkb-dev x11-xkb-utils libx11-xcb-dev libxkbcommon-x11-dev libxkbcommon-dev
@@ -24,7 +24,7 @@ sudo apt install gcc libc6-dev libx11-dev xorg-dev libxtst-dev xsel xclip libpng
 </details>
 
 <details>
-<summary><h4>Windows</h4></summary>
+<summary><b>Windows</b></summary>
 
 CGO support is needed.
 
@@ -42,7 +42,7 @@ CGO support is needed.
 </details>
 
 <details>
-<summary><h4>Fedora</h4></summary>
+<summary><b>Fedora</b></summary>
 
 ```bash
 sudo dnf install libXtst-devel xsel xclip libpng-devel libxkbcommon-devel libxkbcommon-x11-devel xorg-x11-xkb-utils-devel
