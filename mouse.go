@@ -15,12 +15,14 @@ type mouseType struct {
 var Mouse = mouseType{}
 
 func init() {
-	Mouse.SetMouseDelay(10 * time.Millisecond)
+	Mouse.SetMouseDelay(25 * time.Millisecond)
 }
 
 // --- Config ---
 
 // SetMouseDelay sets the default delay between mouseType actions.
+// If the delay is too short, the operating system might fail to register all actions.
+// The default value is 25ms.
 func (m *mouseType) SetMouseDelay(delay time.Duration) {
 	m.mouseDelay = delay
 	robotgo.MouseSleep = int(m.mouseDelay / time.Millisecond)
@@ -63,18 +65,21 @@ func (m mouseType) Click(mouseButton mouse.Button, count ...int) {
 		sum = 1
 	}
 
-	var button string
-
-	switch mouseButton {
-	case mouse.Left:
-		button = "left"
-	case mouse.Right:
-		button = "right"
-	case mouse.Middle:
-		button = "center"
-	}
+	button := internal.MouseButtonToRobotgoString(mouseButton)
 
 	for i := 0; i < sum; i++ {
 		robotgo.Click(button)
 	}
+}
+
+// Hold presses a specific mouse.Button.
+// Use Release to release the button.
+func (m mouseType) Hold(mouseButton mouse.Button) {
+	robotgo.Toggle(internal.MouseButtonToRobotgoString(mouseButton))
+}
+
+// Release releases a specific mouse.Button.
+// Use Hold to press the button.
+func (m mouseType) Release(mouseButton mouse.Button) {
+	robotgo.Toggle(internal.MouseButtonToRobotgoString(mouseButton), "up")
 }

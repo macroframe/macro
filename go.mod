@@ -3,19 +3,22 @@ module github.com/macroframe/macro
 go 1.20
 
 require (
+	github.com/go-vgo/robotgo v0.100.10
+	github.com/pterm/pterm v0.12.62
+)
+
+require (
 	atomicgo.dev/cursor v0.1.1 // indirect
 	atomicgo.dev/keyboard v0.2.9 // indirect
 	atomicgo.dev/schedule v0.0.2 // indirect
 	github.com/StackExchange/wmi v1.2.1 // indirect
 	github.com/containerd/console v1.0.3 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
-	github.com/go-vgo/robotgo v0.100.10 // indirect
 	github.com/gookit/color v1.5.3 // indirect
 	github.com/lithammer/fuzzysearch v1.1.8 // indirect
 	github.com/lxn/win v0.0.0-20210218163916-a377121e959e // indirect
 	github.com/mattn/go-runewidth v0.0.14 // indirect
 	github.com/otiai10/gosseract v2.2.1+incompatible // indirect
-	github.com/pterm/pterm v0.12.62 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/robotn/gohook v0.31.3 // indirect
 	github.com/robotn/xgb v0.0.0-20190912153532-2cb92d044934 // indirect
